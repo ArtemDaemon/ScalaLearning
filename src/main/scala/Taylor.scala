@@ -19,16 +19,18 @@ object Taylor {
         val fx = exactFunction(x)
         val (taylor, iterations) = taylorSum(x, e)
         val xStr = "%6.3f".format(x)
-        val fxStr = "%10.6f".format(fx)
-        val taylorStr = "%10.6f".format(taylor)
-        val diffStr = "%10.6f".format((fx - taylor).abs)
-        val iterStr = iterations.toString
+        val fxStr = "%12.8f".format(fx)
+        val taylorStr = "%12.8f".format(taylor)
+        val iterStr = "%9d".format(iterations)
 
-        println(s"x = $xStr | f(x) = $fxStr | Taylor(x) = $taylorStr | Δ = $diffStr | Итераций: $iterStr")
+        println(s"$xStr | $fxStr | $taylorStr | $iterStr")
 
         loop(x + dx)
       }
     }
+    // Заголовок таблицы
+    println("    x  |     f(x)     |   Taylor(x)  | Итераций ")
+    println("-------|--------------|--------------|----------")
     loop(xStart)
   }
 
