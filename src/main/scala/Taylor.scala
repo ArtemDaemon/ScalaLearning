@@ -18,10 +18,10 @@ object Taylor {
       if (x <= xEnd) {
         val fx = exactFunction(x)
         val (taylor, iterations) = taylorSum(x, e)
-        val xStr = x.formatted("%6.3f")
-        val fxStr = fx.formatted("%10.6f")
-        val taylorStr = taylor.formatted("%10.6f")
-        val diffStr = (fx - taylor).abs.formatted("%10.6f")
+        val xStr = "%6.3f".format(x)
+        val fxStr = "%10.6f".format(fx)
+        val taylorStr = "%10.6f".format(taylor)
+        val diffStr = "%10.6f".format((fx - taylor).abs)
         val iterStr = iterations.toString
 
         println(s"x = $xStr | f(x) = $fxStr | Taylor(x) = $taylorStr | Δ = $diffStr | Итераций: $iterStr")
